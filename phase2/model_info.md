@@ -1,19 +1,15 @@
 # Phase II: LLM Selection and Optimization
 
 ## Selected Model
-- Model: Qwen 0.5B (quantized)
+- Model: Qwen3 0.6B (quantized)
 - Tool: Ollama
 - Runs on: CPU only
 
 ## Why This Model?
 - Very small size (~500MB)
 - Fast on CPU
-- Good instruction following
-
-## Memory Management
-- Only last 5 messages kept in history
-- Old messages are removed to save memory
-- System prompt is always kept
+- Newer version with better instruction following
+- Good for conversational tasks
 
 ## System Prompts
 You are a helpful assistant for ArtCraft, an art supply store.
@@ -28,6 +24,12 @@ You are a helpful assistant for ArtCraft, an art supply store.
 ## Latency Benchmark
 | Test | Response Time |
 |------|--------------|
-| Test 1 | 88.60 seconds |
-| Test 2 | 10.47 seconds |
-| Test 3 | 07.04 seconds |
+| Test 1 | 3.09 seconds |
+| Test 2 | 3.98 seconds |
+| Test 3 | 4.85 seconds |
+
+
+## Known Limitations
+- 0.6B model may sometimes ignore system prompt rules
+- Larger models follow instructions better
+- This is a known tradeoff of using very small CPU models

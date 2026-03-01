@@ -4,7 +4,7 @@ import time
 start_time = time.time()
 
 response = ollama.chat(
-    model="qwen:0.5b", 
+    model="qwen3:0.6b", 
     messages=[
         {
             "role": "system", #System Prompt
@@ -12,7 +12,7 @@ response = ollama.chat(
         },
         {
             "role": "user", #User Prompt
-            "content": "What paper do I need for making hand made paper houses?"
+            "content": "What brushes do I need for watercolor painting?"
         }
     ]
 )
