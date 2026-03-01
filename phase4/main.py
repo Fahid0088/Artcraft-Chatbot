@@ -72,7 +72,7 @@ async def websocket_chat(websocket: WebSocket):
             # Stream response from AI model token by token
             full_reply = ""  
             stream = ollama.chat(
-                model="qwen3:0.6b",  
+                model="llama3.2:3b",  
                 messages=messages,
                 stream=True  
             )
