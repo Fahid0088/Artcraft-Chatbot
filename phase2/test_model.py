@@ -4,7 +4,7 @@ import time
 start_time = time.time()
 
 response = ollama.chat(
-    model="qwen3:0.6b", 
+    model="llama3.2:3b", 
     messages=[
         {
             "role": "system", #System Prompt

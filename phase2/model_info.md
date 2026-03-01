@@ -1,15 +1,16 @@
 # Phase II: LLM Selection and Optimization
 
 ## Selected Model
-- Model: Qwen3 0.6B (quantized)
+- Model: LLaMA 3.2 3B (quantized)
 - Tool: Ollama
 - Runs on: CPU only
 
 ## Why This Model?
-- Very small size (~500MB)
+- Size: 2GB only
+- Follows instructions very well
 - Fast on CPU
-- Newer version with better instruction following
-- Good for conversational tasks
+- Free and open source
+
 
 ## System Prompts
 You are a helpful assistant for ArtCraft, an art supply store.
@@ -29,7 +30,4 @@ You are a helpful assistant for ArtCraft, an art supply store.
 | Test 3 | 4.85 seconds |
 
 
-## Known Limitations
-- 0.6B model may sometimes ignore system prompt rules
-- Larger models follow instructions better
-- This is a known tradeoff of using very small CPU models
+
