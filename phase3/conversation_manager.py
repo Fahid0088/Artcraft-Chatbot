@@ -1,26 +1,22 @@
 import ollama  
-from prompt_template import SYSTEM_PROMPT  
+from prompt_template import SYSTEM_PROMPT 
+from memory_filter import filter_history  
 
 class ConversationManager:
     def __init__(self):
         self.history = []
-        self.max_history = 5
+        self.capacity = 20
 
     def add_message(self, role, content):
-        # role is either "user" or "assistant"
         self.history.append({"role": role, "content": content})
 
-        if len(self.history) > self.max_history:
-            self.history = self.history[-self.max_history:]
+        if len(self.history) > self.capacity:
+            self.history = filter_history(self.history, self.capacity)
 
     def build_messages(self, user_input):
-        # Add system prompt 
+
         messages = [{"role": "system", "content": SYSTEM_PROMPT}]
-
-        # Add previous messages
         messages += self.history
-
-        # Add user message
         messages.append({"role": "user", "content": user_input})
 
         return messages
