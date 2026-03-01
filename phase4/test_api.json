@@ -1,0 +1,29 @@
+{
+  "info": {
+    "name": "ArtCraft Chatbot API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Check Server",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8000/"
+      }
+    },
+    {
+      "name": "New Session",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/session/new?session_id=user1"
+      }
+    },
+    {
+      "name": "Reset Session",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/session/reset?session_id=user1"
+      }
+    }
+  ]
+}
