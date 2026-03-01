@@ -4,6 +4,8 @@ import json
 import sys     
 import os      
 
+# python -m uvicorn main:app --reload
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'phase3'))
 
 from conversation_manager import ConversationManager
