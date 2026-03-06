@@ -10,7 +10,7 @@ class ConversationManager:
         self.order_placed = False    
         self.order_cancelled = False 
         self.order_id = None        
-        self.capacity = 30
+        self.capacity = 50
 
     def add_message(self, role, content):
 
