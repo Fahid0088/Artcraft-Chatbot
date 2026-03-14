@@ -17,14 +17,13 @@ LLaMA 3.2 3B via Ollama (Local CPU)
 
 ## How to Run System
 ```bash
-# Step 1: Start Ollama model
-ollama run llama3.2:3b
 
-# Step 2: Start FastAPI server
+
+# Step 1: Start FastAPI server
 cd phase4
 python -m uvicorn main:app --reload
 
-# Step 3: Open frontend
+# Step 2: Open frontend
 Open phase5/index.html in browser
 ```
 
