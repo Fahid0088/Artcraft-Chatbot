@@ -1,4 +1,7 @@
-from conversation_manager import ConversationManager  
+try:
+    from .conversation_manager import ConversationManager
+except ImportError:
+    from conversation_manager import ConversationManager
 
 manager = ConversationManager()
 

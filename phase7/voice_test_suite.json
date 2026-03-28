@@ -1,0 +1,140 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "ws_chat_url": "ws://127.0.0.1:8000/ws/chat",
+  "ws_voice_url": "ws://127.0.0.1:8000/ws/voice",
+  "conversation_tests": [
+    {
+      "name": "Greeting",
+      "steps": [
+        {
+          "input": "Hello",
+          "contains": [
+            "art supplies",
+            "orders"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brush Question",
+      "steps": [
+        {
+          "input": "Can you please tell me what type of brushes you have",
+          "contains": [
+            "Round Brush Set 6 pcs",
+            "Flat Brush Set 6 pcs",
+            "Complete Brush Set 12 pcs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Off Topic Redirect",
+      "steps": [
+        {
+          "input": "What is the price of laptops",
+          "contains": [
+            "art supplies",
+            "craft materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Procedure Question",
+      "steps": [
+        {
+          "input": "I want to make a doll house. Tell me how to make it",
+          "contains": [
+            "1.",
+            "2.",
+            "3."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Order Placement",
+      "steps": [
+        {
+          "input": "I want to place my order",
+          "contains": [
+            "full name"
+          ]
+        },
+        {
+          "input": "Fahid Imran",
+          "contains": [
+            "phone number"
+          ]
+        },
+        {
+          "input": "Zero one two three four five six seven eight nine",
+          "contains": [
+            "email address"
+          ]
+        },
+        {
+          "input": "fahid at the rate gmail dot com",
+          "contains": [
+            "what would you like to order"
+          ]
+        },
+        {
+          "input": "one glue",
+          "contains": [
+            "Order Confirmed!",
+            "Craft Glue"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cancel Flow",
+      "steps": [
+        {
+          "input": "I want to place my order",
+          "contains": [
+            "full name"
+          ]
+        },
+        {
+          "input": "Fahid Imran",
+          "contains": [
+            "phone number"
+          ]
+        },
+        {
+          "input": "0123456789",
+          "contains": [
+            "email address"
+          ]
+        },
+        {
+          "input": "fahid@gmail.com",
+          "contains": [
+            "what would you like to order"
+          ]
+        },
+        {
+          "input": "1 glue",
+          "contains": [
+            "Order Confirmed!"
+          ]
+        },
+        {
+          "input": "Cancel my order",
+          "contains": [
+            "Are you sure"
+          ]
+        },
+        {
+          "input": "Yes.",
+          "contains": [
+            "cancelled successfully"
+          ]
+        }
+      ]
+    }
+  ]
+}

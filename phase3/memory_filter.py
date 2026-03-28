@@ -1,4 +1,3 @@
-
 PRODUCT_KEYWORDS = [
     "brush", "paint", "watercolor", "acrylic", "oil paint", "gouache",
     "tempera", "spray paint", "fabric paint", "face paint",
@@ -37,9 +36,8 @@ NOISE_KEYWORDS = [
 ]
 
 def score_message(message, index, total):
-
     score = 0
-    content = message["content"].lower() 
+    content = message["content"].lower()
 
     for word in PRODUCT_KEYWORDS:
         if word in content:
@@ -51,7 +49,6 @@ def score_message(message, index, total):
             score += 2
             break
 
-    # +2 if message is recent
     if index >= total - 2:
         score += 2
 
@@ -60,18 +57,11 @@ def score_message(message, index, total):
             score -= 2
             break
 
-    return score  
+    return score
 
-def filter_history(history, capacity = 10):
-    total = len(history)  
-
-    scored = []
-    for i, msg in enumerate(history):
-        s = score_message(msg, i, total)  
-        scored.append((s, msg)) 
-
+def filter_history(history, capacity=10):
+    total = len(history)
+    scored = [(score_message(msg, i, total), i, msg) for i, msg in enumerate(history)]
     scored.sort(key=lambda x: x[0], reverse=True)
-
-    top_msg = [msg for score, msg in scored[:capacity]]
-
-    return top_msg  
+    kept = sorted(scored[:capacity], key=lambda x: x[1])
+    return [msg for score, index, msg in kept]

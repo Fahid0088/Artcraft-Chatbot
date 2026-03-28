@@ -1,0 +1,101 @@
+{
+  "info": {
+    "name": "ArtCraft Voice Agent Tests",
+    "description": "Pre-check requests for the ArtCraft voice agent before running manual WebSocket tests in Postman.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "ws_voice_url",
+      "value": "ws://127.0.0.1:8000/ws/voice"
+    },
+    {
+      "key": "ws_chat_url",
+      "value": "ws://127.0.0.1:8000/ws/chat"
+    }
+  ],
+  "item": [
+    {
+      "name": "Server Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Open UI",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/app",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "app"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Session",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/session/new?session_id=voice_user_1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "session",
+            "new"
+          ],
+          "query": [
+            {
+              "key": "session_id",
+              "value": "voice_user_1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Reset Session",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/session/reset?session_id=voice_user_1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "session",
+            "reset"
+          ],
+          "query": [
+            {
+              "key": "session_id",
+              "value": "voice_user_1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
